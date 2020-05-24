@@ -1,0 +1,30 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_lab2_Maps"
+        xmlns:WindowsPresentation="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" x:Class="OOP_lab2_Maps.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="858" Width="1270">
+    <Grid>
+
+        <WindowsPresentation:GMapControl Height="858" Width="1256" Margin="-0,-0,0,0" Name="Map" MouseLeftButtonDown="Map_MouseLeftButtonDown" Loaded="MapLoaded"/>
+        <TextBox HorizontalAlignment="Left" Height="48" Margin="1004,10,0,0" TextWrapping="Wrap" Text="Режим курсора" VerticalAlignment="Top" Width="242"/>
+        <TextBox HorizontalAlignment="Left" Height="78" Margin="1004,65,0,0" TextWrapping="Wrap" Text="Добавить" VerticalAlignment="Top" Width="242" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Height="368" Margin="1004,170,0,0" TextWrapping="Wrap" Text="Поиск&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Результаты поиска" VerticalAlignment="Top" Width="242" IsEnabled="False"/>
+        <ComboBox x:Name="objType" HorizontalAlignment="Left" Margin="1015,87,0,0" VerticalAlignment="Top" Width="142" Height="22" SelectedIndex="0" IsEnabled="False">
+            <ListBoxItem Content="Машина"/>
+            <ListBoxItem Content="Человек"/>
+            <ListBoxItem Content="Точка назначения"/>
+        </ComboBox>
+        <TextBox x:Name="objTitle" HorizontalAlignment="Left" Height="15" Margin="1074,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" FontSize="9" IsEnabled="False"/>
+        <Label Content="Название:" HorizontalAlignment="Left" Margin="1015,114,0,0" VerticalAlignment="Top" Height="21" Width="59" FontSize="9" />
+        <ListBox x:Name="objectList" HorizontalAlignment="Left" Height="288" Margin="1014,240,0,0" VerticalAlignment="Top" Width="224" SelectionChanged="ObjectList_SelectionChanged"/>
+        <CheckBox x:Name="CHm" Content="Создание" HorizontalAlignment="Left" Margin="1014,35,0,0" VerticalAlignment="Top" Checked="CHm_Checked" Height="30" Width="99"/>
+        <CheckBox x:Name="NCHm" Content="Перемещение" HorizontalAlignment="Left" Margin="1118,35,0,0" VerticalAlignment="Top" Checked="NCHm_Checked" IsChecked="True" Height="30" Width="120"/>
+        <TextBox x:Name="poisk" HorizontalAlignment="Left" Height="23" Margin="1015,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="9" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="RoutMap" Content="Построить маршрут" HorizontalAlignment="Left" Margin="1004,767,0,0" VerticalAlignment="Top" Width="242" Height="50" Click="RoutMap_Click"/>
+
+    </Grid>
+</Window>
